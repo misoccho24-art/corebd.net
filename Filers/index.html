@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Playwrite+AU+VIC+Guides&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+    
+    <video autoplay muted loop playsinline class="video">
+        <source src="vecteezy_loop-of-smoke-fire-sparks-rising-up-particle_7525563.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-overlay"></div>
+
+        <div class="content">
+            <nav class="nav">
+    <div class="navdiv">
+
+        <div class="logo"><a href="index.html"><img class="img" src="CORE (4).png" alt=""></a></div>
+
+        <ul class="nav-links" id="navLinks">
+        <a href="sign.html">
+            <button class="btn" id="btn">
+                Sign up
+            </button>
+        </a>
+
+        <a href="log.html">
+            <button class="btn" id="btn1">
+                Log in
+            </button>
+        </a>
+        </ul>
+
+
+        <div class="hamburger" id="hamburger"><img src="account_circle_31dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></div>
+    </div>
+</nav>
+
+    <div class="sidebar-toggle" id="sidebarToggle">☰</div>
+
+    <nav class="nav-list" id="sidebar">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="store.html">Store</a></li>
+    <li><a href="coins.html">Coins</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="ip.html">Ip & Port</a></li>
+</nav>
+
+<div class="filers-div">
+    <p class="tagline">CORE BD.</p>
+</div>
+
+<div class="div-s">
+    <p class="s-details">The best Bangladeshi Minecraft server.</p>
+</div>
+
+<div class="button-div">
+    <button class="fliers-but" onclick="page();">
+        Go to Store
+    </button>
+</div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="loader" id="loader"></div>
+
+<script>
+    const video = document.querySelector('video');
+
+    video.playbackRate = 1;
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+        sidebar.classList.toggle("close");
+    });
+
+  const toggle = document.getElementById("sidebarToggle");
+  const sidebar = document.getElementById("sidebar");
+
+  toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+    navLinks.classList.toggle("close");
+  });
+
+  function page() {
+    overlay.style.display = "block";
+    loader.style.display = "block";
+
+    setTimeout(() => {
+        window.location.href = "store.html";
+    }, 700);
+  }
+
+</script>
+
+    <footer class="footer">
+        <div class="div-f">
+            <p class="f-p">Powered by and ClearNature</p>
+        </div>
+    </footer>
+
+        </div>
+</body>
+</html>

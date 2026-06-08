@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank Cards</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Playwrite+AU+VIC+Guides&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+          <nav class="nav">
+    <div class="navdiv">
+
+        <div class="logo"><a href="index.html"><img class="img" src="CORE (4).png" alt=""></a></div>
+
+        <ul class="nav-links" id="navLinks">
+        <a href="sign.html">
+            <button class="btn" id="btn">
+                Sign up
+            </button>
+        </a>
+
+        <a href="log.html">
+            <button class="btn" id="btn1">
+                Log in
+            </button>
+        </a>
+        </ul>
+
+
+        <div class="hamburger" id="hamburger"><img src="account_circle_31dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></div>
+    </div>
+</nav>
+
+
+<div class="sidebar-toggle" id="sidebarToggle">☰</div>
+    <nav class="nav-list" id="sidebar">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="store.html" class="active">Store</a></li>
+    <li><a href="coins.html">Coins</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="ip.html">Ip & Port</a></li>
+</nav>
+
+    <div class="card-container">
+
+        <a href="finishing.html">
+                    <div class="in-div">
+            <p class="line">Knight Rank</p>
+            <p class="r">BDT 225</p>
+            <p class="ro">175</p>
+            <p>In Game Cash - 350,000</p>
+            <p>3 Homes</p>
+            <p>/anvil</p>
+            <p>/craft</p>
+        </div>
+        </a>
+
+        <a href="finishing.html">
+                    <div class="in-div">
+            <p class="line">king Rank</p>
+            <p class="r">BDT 450</p>
+            <p class="ro">350</p>
+            <p>In Game Cash - 750,000</p>
+            <p>5 Homes</p>
+            <p>/anvil</p>
+            <p>/craft</p>
+            <p>/invcheck</p>
+        </div>
+        </a>
+
+        <a href="finishing.html">
+                    <div class="in-div1">
+            <p class="ro">HOT DEAL</p>
+            <p class="line">phantom Rank</p>
+            <p class="r">BDT 700</p>
+            <p class="ro">550</p>
+            <p>In Game Cash - 1,000,000</p>
+            <p>10 Homes</p>
+            <p>/anvil</p>
+            <p>/craft</p>
+            <p>/echest</p>
+            <p>/smithing</p>
+            <p>/sleep</p>
+        </div>
+        </a>
+
+        <a href="finishing.html">
+                    <div class="in-div2">
+            <p class="line">dragon Rank</p>
+            <p class="r">BDT 900</p>
+            <p class="ro">700<p>
+            <p>In Game Cash - 1,500,000</p>
+            <p>10 Homes</p>
+            <p>/anvil</p>
+            <p>/craft</p>
+            <p>/echest</p>
+            <p>/smithing</p>
+            <p>/sleep</p>
+        </div>
+        </a>
+
+    </div>
+
+    <script>
+            hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+        sidebar.classList.toggle("close");
+    });
+
+  const toggle = document.getElementById("sidebarToggle");
+  const sidebar = document.getElementById("sidebar");
+
+  toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+    navLinks.classList.toggle("close");
+  });
+    </script>
+
+</body>
+</html>

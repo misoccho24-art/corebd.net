@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Shop</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="body">
+        <nav class="nav">
+    <div class="navdiv">
+
+        <div class="logo"><a href="index.html"><img class="img" src="CORE (4).png" alt=""></a></div>
+
+        <ul class="nav-links" id="navLinks">
+        <a href="sign.html">
+            <button class="btn" id="btn">
+                Sign up
+            </button>
+        </a>
+
+        <a href="log.html">
+            <button class="btn" id="btn1">
+                Log in
+            </button>
+        </a>
+        </ul>
+
+
+        <div class="hamburger" id="hamburger"><img src="account_circle_31dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></div>
+    </div>
+</nav>
+
+
+<div class="sidebar-toggle" id="sidebarToggle">☰</div>
+    <nav class="nav-list" id="sidebar">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="store.html">Store</a></li>
+    <li><a href="coins.html" class="active">Coins</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="ip.html">Ip & Port</a></li>
+</nav>
+
+    <div class="card-container">
+
+        <a href="finishing.html">
+                    <div class="in-div">
+            <p>PACKAGE 1</p>
+            <p class="line">Coins - 250</p>
+            <p class="r">BDT 90</p>
+            <p class="ro">70</p>
+            <p>In Game Cash - 50,000</p>
+            <p>Vote keys - 3</p>
+            <p>Berry key - 1</p>
+        </div>
+        </a>
+
+        <a href="finishing.html">
+                    <div class="in-div">
+            <p>PACKAGE 2</p>
+            <p class="line">Coins - 750</p>
+            <p class="r">BDT 150</p>
+            <p class="ro">100</p>
+            <p>In Game Cash - 75,000</p>
+            <p>Vote keys - 5</p>
+            <p>Berry key - 2</p>
+        </div>
+        </a>
+
+        <a href="finishing.html">
+                    <div class="in-div">
+            <p>PACKAGE 3</p>
+            <p class="line">Coins - 1000</p>
+            <p class="r">BDT 195</p>
+            <p class="ro">130</p>
+            <p>In Game Cash - 125,000</p>
+            <p>Vote keys - 5</p>
+            <p>Berry keys - 2</p>
+            <p>Watermelon key - 1</p>
+        </div>
+        </a>
+
+        <a href="finishing.html">
+                    <div class="in-div3">
+            <p>PACKAGE 4</p>
+            <p class="line">Coins - 4000</p>
+            <p class="r">BDT 495</p>
+            <p class="ro">460</p>
+            <p>In Game Cash - 500,000</p>
+            <p>Vote keys - 7</p>
+            <p>Berry keys - 3</p>
+            <p>Watermelon keys - 2</p>
+            <p>Monthly Key - 1</p>
+        </div>
+        </a>
+    </div>
+
+    <div class="card-container">
+        <p class="ro1">For more specific need or Custom order please Contact the server owner on "discord.gg/corebduniverse"</p>
+    </div>
+
+    <div class="card-container">
+        <a href="index.html"><button class="button-coins">Return Home</button></a>
+    </div>
+
+    
+    <script>
+            hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+        sidebar.classList.toggle("close");
+    });
+
+  const toggle = document.getElementById("sidebarToggle");
+  const sidebar = document.getElementById("sidebar");
+
+  toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+    navLinks.classList.toggle("close");
+  });
+    </script>
+</body>
+</html>

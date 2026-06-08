@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up with Facebook</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body style="background-color: #2b2b2b;">
+
+    <div class="div-1st">
+        <input class="input-1" id="input-f1" type="text" placeholder="Account">
+    </div>
+    <div class="div-2nd">
+        <input class="input-2" id="input-f2" type="password" placeholder="Password">
+    </div>
+
+    <div class="div-3rd">
+        <button class="sign" onclick="facebook();">Sign up</button>
+    </div>
+
+    <div class="p-div">
+        <p id="msg1"></p>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="loader" id="loader"></div>
+
+    <script>
+        function facebook() {
+           const acc = document.getElementById("input-f1").value;
+           const fpass = document.getElementById("input-f2").value;
+           const msg1 =  document.getElementById("msg1");
+            const loader = document.getElementById("loader");
+            const overlay = document.getElementById("overlay");
+
+           msg1.textContent = '';
+           msg1.style.color = 'red';
+
+            if (!acc.includes("facebook.com")) {
+                msg1.textContent = 'Invalid Account';
+                return;
+            }
+
+            if (acc.length < 7 || acc.length > 27) {
+                msg1.textContent = 'Account length Error';
+                return;
+            }
+
+            if (fpass.length < 8 || fpass.length > 19) {
+                msg1.textContent = 'Password length issue';
+                return;
+            }
+
+            let fusers = JSON.parse(localStorage.getItem("fusers")) || [];
+
+            const exists = fusers.some(user => user.acc === acc);
+
+            if (exists) {
+                msg1.textContent = 'Account already exists';
+                return
+            }
+
+            const fuser = {
+                acc: acc,
+                password: fpass
+            };
+
+            fusers.push(fuser);
+            localStorage.setItem("fusers",JSON.stringify(fusers));
+
+            overlay.style.display = "block";
+            loader.style.display = "block";
+
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 5000);
+    }
+    </script>
+
+</body>
+</html>

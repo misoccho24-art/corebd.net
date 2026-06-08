@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up with Gmail</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body style="background-color: #2b2b2b;">
+
+    <div class="div-input"><input class="input-1" id="input-1" type="text" placeholder="Gmail"></div>
+
+    <div class="div-2"><input class="input-2" id="input-2" type="text" placeholder="Password"></div>
+
+    <div class="div-button">
+        <button class="sign" onclick="validateForm()">Sign up</button>
+    </div>
+
+    <div class="p-div">
+        <p class="msg" id="msg"></p>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="loader" id="loader"></div>
+
+<script>
+    function validateForm() {
+    const gmail = document.getElementById("input-1").value;
+    const pass = document.getElementById("input-2").value;
+    const msg = document.getElementById("msg");
+    const loader = document.getElementById("loader");
+    const overlay = document.getElementById("overlay");
+
+    console.log("validateForm running");
+
+    msg.style.color = "red";
+    msg.textContent = "";
+
+    if (!gmail.includes("@")) {
+        msg.textContent = "Invalid gmail";
+        return;
+    }
+
+    if (gmail.length < 7 || gmail.length > 27) {
+        msg.textContent = "Gmail length error";
+        return;
+    }
+
+    if (pass.length < 5 || pass.length > 25) {
+        msg.textContent = "Password length error";
+        return;
+    }
+
+/* GET USERS ARRAY SAFELY */
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+
+
+/* CHECK IF EMAIL ALREADY EXISTS */
+const exists = users.some(user => user.gmail === gmail);
+
+if (exists) {
+    msg.textContent = "Account already exists";
+    return;
+}
+
+let user = {
+    gmail: gmail,
+    password: pass
+};
+
+
+users.push(user);
+
+localStorage.setItem("users", JSON.stringify(users));
+
+
+    overlay.style.display = "block";
+    loader.style.display = "block";
+
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 5000);
+}
+</script>
+</body>
+</html>

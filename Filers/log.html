@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body style="background-color: #2b2b2b;">
+
+    <div class="div-log"><input class="input-log" id="info" type="text" placeholder="Gmail/Facebook/Email"></div>
+
+    <div class="div-pass-log"><input class="input-pass-log" id="pass" type="text" placeholder="Password"></div>
+
+    <div class="div-log-button"><button class="button-log" onclick="log();">Log in</button></div>
+
+    <div class="id-div">
+        <p id="msgl" class="msgl"></p>
+    </div>
+
+    <p id="msgload"></p>
+
+    <script>
+        function log() {
+            const gmail = document.getElementById("info").value;
+            const pass = document.getElementById("pass").value;
+            const msgl = document.getElementById("msgl");
+
+            const savedUser = JSON.parse(localStorage.getItem("user"));
+            const savedFuser = JSON.parse(localStorage.getItem("fuser"));
+            const savedEuser = JSON.parse(localStorage.getItem("euser"));
+
+            msgl.style.color = 'red';
+
+            if (!savedUser && !savedFuser && !savedEuser) {
+                msgl.textContent = 'No account seems to exist';
+                return;
+            }
+
+            if (savedUser && gmail === savedUser.gmail && pass === savedUser.password) {
+                successLogin();
+                return;
+            }
+
+            if (savedFuser && gmail === savedFuser.acc && pass === savedFuser.password) {
+                successLogin();
+                return;
+            }
+
+            if (savedEuser && gmail === savedEuser.email && pass === savedEuser.password) {
+                successLogin();
+                return;
+            }
+
+            msgl.textContent = 'Wrong Email or Password';
+
+        };
+
+        function successLogin() {
+            const msgl = document.getElementById("msgl");
+
+            msgl.style.color = "green";
+            msgl.textContent = "Processing your Form...";
+
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 2000);
+                };
+
+    </script>
+</body>
+</html>

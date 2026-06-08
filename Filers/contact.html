@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="body">
+          <nav class="nav">
+    <div class="navdiv">
+
+        <div class="logo"><a href="index.html"><img class="img" src="CORE (4).png" alt=""></a></div>
+
+        <ul class="nav-links" id="navLinks">
+        <a href="sign.html">
+            <button class="btn" id="btn">
+                Sign up
+            </button>
+        </a>
+
+        <a href="log.html">
+            <button class="btn" id="btn1">
+                Log in
+            </button>
+        </a>
+        </ul>
+
+
+        <div class="hamburger" id="hamburger"><img src="account_circle_31dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></div>
+    </div>
+</nav>
+
+    <div class="sidebar-toggle" id="sidebarToggle">☰</div>
+
+    <nav class="nav-list" id="sidebar">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="store.html">Store</a></li>
+    <li><a href="coins.html">Coins</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="ip.html">Ip & Port</a></li>
+</nav>
+
+    <div class="div-help">
+        <p class="main-text">Help</p>
+    </div>
+
+    <div class="summary">
+        <p class="sum-text">If you need help with anything or daily updates for weekly events. Join 
+            <a class="a-href" href="">discord.gg/corebduniverse</a>. Or you can DM me mi09857 it will be my duty to help.
+        </p>
+    </div>
+
+    <div class="div-help1">
+        <p class="main-text1">Billing/Payment</p>
+    </div>
+    
+    <div class="summary">
+        <p class="sum-text">
+            Warning. Payment and billing will all be under the obidience of the server owner. There will not be any 
+            exception no matter the circumtances. If you bypass this Warning actions will be taken against you.
+            If you have a urgency create ticket on the Discord server. The Devs will be as quick as a they can to help you out.
+        </p>
+    </div>
+
+    <div class="div-help1">
+        <p class="main-text1">Suggetions</p>
+    </div>
+    
+    <div class="summary">
+        <p class="sum-text">
+            If you got any ideas or opinion to make this website or the server even better please share it with our community.
+            We would love to hear it from you. Report any Hacker, Exploiter, Bully/Harassment 
+            to make the community safer and suitable for minor Players.
+        </p>
+    </div>
+
+    
+    <script>
+            hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+        sidebar.classList.toggle("close");
+    });
+
+  const toggle = document.getElementById("sidebarToggle");
+  const sidebar = document.getElementById("sidebar");
+
+  toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+    navLinks.classList.toggle("close");
+  });
+    </script>
+</body>
+</html>

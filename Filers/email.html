@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up with Email</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body style="background-color: #2b2b2b;">
+        <div class="div-1st">
+        <input class="input-1" id="input-f1" type="text" placeholder="Account">
+    </div>
+    <div class="div-2nd">
+        <input class="input-2" id="input-f2" type="text" placeholder="Password">
+    </div>
+    <div class="div-3rd">
+        <button class="sign" onclick="email();">Sign up</button>
+    </div>
+
+    <div class="p-div">
+        <p id="msg1"></p>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="loader" id="loader"></div>
+
+    <script>
+function email() {
+    const email = document.getElementById("input-f1").value;
+    const epass = document.getElementById("input-f2").value;
+    const msg1 = document.getElementById("msg1");
+    const overlay = document.getElementById("overlay");
+    const loader = document.getElementById("loader");
+
+    msg1.style.color = 'red';
+    msg1.textContent = '';
+
+    // 1. Basic Validations
+    if (!email.includes("@")) {
+        msg1.textContent = 'Invalid Email';
+        return;
+    }
+
+    if (email.length < 7 || email.length > 26) {
+        msg1.textContent = 'Email length issue';
+        return;
+    }
+
+    if (epass.length < 6 || epass.length > 23) {
+        msg1.textContent = 'Password length issue';
+        return;
+    }
+
+    // 2. Fetch existing users from localStorage
+    // Note: Use quotes around "eusers"
+    let eusers = JSON.parse(localStorage.getItem("eusers")) || [];
+
+    // 3. Check if user already exists
+    // Syntax fix: u => u.email === email
+    const exists = eusers.some(user => user.email === email);
+
+    if (exists) {
+        msg1.textContent = 'Account already exists';
+        return;
+    }
+
+    // 4. If new, save the user
+    const newUser = {
+        email: email,
+        password: epass
+    };
+
+    eusers.push(newUser);
+    localStorage.setItem("eusers", JSON.stringify(eusers));
+
+    // 5. Success UI
+    overlay.style.display = "block";
+    loader.style.display = "block";
+
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 5000); // Shortened to 2s for testing
+}
+    </script>
+</body>
+</html>
